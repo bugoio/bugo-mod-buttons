@@ -23,9 +23,11 @@ button,
   border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
   background-color: $button-default-bg;
   color: $button-default-color;
-  @media (prefers-color-scheme: dark) {
-    background-color: $button-default-bg-dark;
-    color: $button-default-color-dark;
+  @if $global-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      background-color: $button-default-bg-dark;
+      color: $button-default-color-dark;
+    }
   }
   text-decoration: none;
   border-radius: $button-radius;
@@ -145,4 +147,8 @@ button[disabled],
     background-color: $color;
     color: white;
   }
+}
+
+.button-transparent {
+  background-color: transparent !important;
 }
